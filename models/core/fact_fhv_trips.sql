@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-for_hire as (
+with for_hire as (
     select *
     from {{ ref('stg_fhv_tripdata') }}
     where pickup_locationid is not null or dropoff_locationid is not null
