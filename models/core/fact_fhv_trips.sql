@@ -8,6 +8,7 @@ with for_hire as (
 
 dim_zones as (
     select * from {{ ref('dim_zones') }}
+    where borough != 'Unknown'
 )
 select 
     for_hire.*, 
